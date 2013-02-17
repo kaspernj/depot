@@ -15,6 +15,9 @@ class ProductsControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:products)
+    assert_select "table tr td img", 3
+    assert_select "table tr td dl dt", "Programming Ruby 1.9"
+    assert_select "table tr td dl dd", "Ruby is a fast growing dynamic language."
   end
 
   test "should get new" do

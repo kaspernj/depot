@@ -1,12 +1,15 @@
 Fitness::Application.routes.draw do
-  resources :products
+  get "store/index"
 
+  resources :products
 
   get "say/hello"
 
   get "say/goodbye"
   
   get "say/files"
+  
+  get "application/current_time_str"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,6 +61,7 @@ Fitness::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  root to: "store#index", as: "store"
 
   # See how all your routes lay out with "rake routes"
 
